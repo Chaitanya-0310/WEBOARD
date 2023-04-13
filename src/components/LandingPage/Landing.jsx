@@ -3,11 +3,12 @@ import Hero from './Hero'
 import Companies from './Companies';
 import Features from './Features';
 import Featuresadd from './Featuresadd';
-import Examples from './Examples';
 import Cta from './Cta';
 import Footer from './Footer';
 import Subfooter from './Subfooter';
-import Navbar from './Navbar'
+import Navbar from './Navbar';
+import './index.css';
+
 
 
 const Landing = () => {
@@ -20,9 +21,7 @@ const Landing = () => {
           <Featuresadd/>
           <Cta/>
           <Footer/>
-          <Subfooter/>
-          
-          
+          <Subfooter/>        
       
     </>
   )

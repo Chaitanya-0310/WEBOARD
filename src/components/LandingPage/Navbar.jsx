@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-// import './Navbar.css';
-// import './src/mainstyle.css'
+
 
 
 const Navbar = () => {
@@ -9,7 +8,7 @@ const Navbar = () => {
     <div className="navbag">
        <nav >
         <div class="container1 main-nav flex">
-            <a href="#" class="company-logo">
+            <a href=" " class="company-logo">
                 <h1 className ="hellofont">WEBOARD</h1>
             </a>
             <div class="nav-links" id="nav-links">

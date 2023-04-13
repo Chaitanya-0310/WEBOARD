@@ -1,6 +1,5 @@
 import React from 'react';
-// import './Hero.css';
-// import './src/mainstyle.css'
+
 
 const Hero = () => {
   return (
@@ -12,7 +11,7 @@ const Hero = () => {
                 <a href="#" class="primary-button get-started-btn">Get Started</a>
             </div>
             <div class="header-right">
-                <img src={require("./assets/headerimage-without-text.png")} alt="hero image"/>
+                <img src={require("../assets/headerimage-without-text.png")} alt="hero image"/>
                
             </div>
         </div>

@@ -1,6 +1,4 @@
 import React from 'react';
-// import './examplestyle.css';
-// import './src/mainstyle.css'
 
 const Examples = () => {
   return (
@@ -16,7 +14,7 @@ const Examples = () => {
                 <a href="#" className="examples-card">
                     <h3 className="card-text">Can user complete a task in my software interface?</h3>
                 </a>
-                <a className="examples-card" href="#" style="background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(./assets/asset 34.jpeg); background-size: cover;">
+                <a className="examples-card" href="#" style="background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(../assets/asset 34.jpeg); background-size: cover;">
                     <h3 className="card-text">Can users find important pages on my website?</h3>
                 </a>
                 <a className="examples-card" href="#">

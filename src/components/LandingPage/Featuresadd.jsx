@@ -10,7 +10,7 @@ const Featuresadd = () => {
     <section className="big-feature-section">
         <div className="container flex big-feature-container">
             <div className="feature-img">
-                <img src={require("./assets/asset 18.png")} alt=""/>
+                <img src={require("../assets/asset 18.png")} alt=""/>
             </div>
             <div className="feature-desc flex">
                 <h2>Effortless validation for</h2>
@@ -23,7 +23,7 @@ const Featuresadd = () => {
     <section className="big-feature-section">
         <div className="container flex big-feature-container" id="second-big-feature">
             <div className="feature-img">
-                <img src={require("./assets/hybridwork (1).png")} alt=""/>
+                <img src={require("../assets/hybridwork (1).png")} alt=""/>
             </div>
             <div className="feature-desc flex">
                  <h2>Hands-On with</h2>
@@ -36,7 +36,7 @@ const Featuresadd = () => {
     <section className="big-feature-section">
         <div className="container flex big-feature-container">
             <div className="feature-img">
-                <img src={require("./assets/asset 38.png")} alt=""/>
+                <img src={require("../assets/asset 38.png")} alt=""/>
             </div>
             <div className="feature-desc flex">
                 <h2>Work together,</h2>
