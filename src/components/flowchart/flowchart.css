@@ -2,8 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
-  .textfield{
+
+.textfield{
     margin-left: 10px;
     margin-top: 10%;
     border-radius: 5px;
@@ -19,41 +21,71 @@
   
 }
 
-.child_div {
-  margin-right:5px ;
-  display: flex;
-  padding: 1px;
-  background:#ECE5D9;
-  height: 4vw;
-  width: 46vw;
-  position: absolute;
-  top: 2%;
-  right: 0.5%;
-  border-radius: 5px;  
-  border: 2px #3A3D4E solid;
+#flowchart .child_div {
+    margin-right:5px ;
+    display: flex;
+    padding: 1px;
+    background:#D0CEE5;
+    height: 8.5vh;
+    width: 46vw;
+    position: absolute;
+    bottom:2%;
+    left:1%;
+    border-radius: 7px;  
+    
  
 }
 
-.avatar_child_div{
+#flowchart .avatar_child_div{
   display:flex;
   align-items: center;
   position: absolute;
   top: 2%;
-  left: 0.5%;
+  left: 1%;
   
 }
 
-.exitlogo{
+#flowchart .exitlogo{
   margin-right: 2%; 
-  display: flex;
-  position:absolute;
-  top:13%;
-  right:.5%;
-  width: 15px;
-  height: 45px;
-  border-radius: 4px;
-  cursor: pointer;
+    display: flex;
+    position:absolute;
+    top:2%;
+    right:0%;
+    width: 20px;
+    height: 45px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: center;
   
 }
 
+#flowchart .exitlogo:hover{
+  opacity: 0.9;
+}
 
+
+#flowchart .react-flow__controls{
+  top: 40%;
+  left: 0%;
+  height: 17%;
+  background:#ECE5D9;
+}
+
+
+#flowchart   .download-btn {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  z-index: 10;
+  background:#ECE5D9;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  height: 43px;
+}
+
+#flowchart   .download-btn:hover {
+  opacity: 0.9;
+}

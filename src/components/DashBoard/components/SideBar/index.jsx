@@ -1,11 +1,7 @@
-
-
-
-
 const SideBar = () => {
   return (
-    <div className="fixed top-0 left-0 h-screen w-16 flex flex-col
-                  bg-[#7D80C7] dark:bg-gray-900 shadow-lg">
+    <div className="fixed top-0 left-0 h-screen p-2 w-20 flex flex-col
+                  bg-[#58549E] dark:bg-gray-900 shadow-lg">
                     
         <SideBarIcon icon={<i class="fa-solid fa-house  fa-lg"></i>}  />
         <SideBarIcon icon={<i class="fa-solid fa-solid fa-user fa-lg"></i>} />

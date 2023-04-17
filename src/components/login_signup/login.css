@@ -2,7 +2,7 @@
 
 .login {
   width: 450px;
-  background-color: #ECE5D9;
+  background-color: #e2eafc;
   border: 1px solid #dddfe2;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   border-radius: 8px;
@@ -12,11 +12,14 @@
   position: absolute;
   top:25%;
   right: 10%;
+  color: #58549E;
+  text-transform: uppercase;
 }
 
 .input-form {
   margin: 2rem 1rem;
   padding: 0.5rem 0.75rem;
   width: 92%;
+  border-radius: 4px;
 }
 

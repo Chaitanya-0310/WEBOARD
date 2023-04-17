@@ -9,10 +9,13 @@ import Divider from '@mui/material/Divider';
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 import {Link} from "react-router-dom";
+import { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 
 
-const Login = ({ setLoginUser}) => {
+
+const Login = ({ updateUser}) => {
   const navigate = useNavigate()
 
   
@@ -32,12 +35,20 @@ const handleChange = e => {
 }
 
 const login = () => {
+  
   axios.post("http://localhost:9002/login", user)
   .then(res => {
-      alert(res.data.message)
-      setLoginUser(res.data.user)
-      navigate("/")
+       toast.success("login successful")  
+      // alert(res.data.message)
+      // updateUser(res.data.user)
+      navigate("/Dashboard")
+
   })
+  .catch(res => {
+    toast.error("Password Incorrect")
+  })
+
+
 }
 
     return (
@@ -52,21 +63,21 @@ const login = () => {
         <div className="login">
             <h1>Login</h1>
             <div className="input-form">
-              <TextField id="email" name="email" type="text" value={user.email} onChange={handleChange} label="Enter your Email" variant="outlined" style={{width: 350, height: 30}} className="input-form" />
+              <TextField id="email" name="email" type="text" value={user.email} onChange={handleChange} label="Enter your Email" variant="outlined" style={{width: 350, height: 30}}  />
             </div>
             <div className="input-form">
               <TextField id="password" name="password" type="password" value={user.password} onChange={handleChange} label="Enter your Password" variant="outlined" style={{width: 350, height: 55}} className="input-form" />
             </div>
 
             <div className="my-2">
-              <Button variant="contained" onClick={login} style={{width:120,height:50, backgroundColor: "#E46D5F"}}>Login</Button>
+              <Button variant="contained" onClick={login} style={{width:120,height:50, backgroundColor: "#58549E"}}>Login</Button>
             </div>
 
              <Divider>Or</Divider>
             
             <div className="my-2">
               <Link onClick={() => navigate.push("/register")} exact to ="/register">
-                <Button variant="contained" style={{width:120,height:50, backgroundColor: "#E46D5F"}}>Register</Button>
+                <Button variant="contained" style={{width:120,height:50, backgroundColor: "#58549E"}}>Register</Button>
               </Link>
             </div>
               

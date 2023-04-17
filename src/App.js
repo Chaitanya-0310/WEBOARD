@@ -6,42 +6,37 @@ import Register from './components/login_signup/Register';
 import Error from './components/LandingPage/Error';
 import MindNode from './components/flowchart/node.component';
 import Dashboard from './components/DashBoard/Dashboard';
-import MindApp from './components/MindMap/MindApp'
-import './components/MindMap/indexstyle.css'
-
+import './components/DND/indexstyle.css'
+import Dnd from './components/DND/Dnd'
+import MappingNode from './components/MappingFlow/MappingNode';
+import Board from './components/WhiteBoard/Board';
+import { Toaster } from 'react-hot-toast';
 
 
 const App = () => {
 
- const [ user, setLoginUser] = useState({})
-
  return (
     
+<>
+  <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
     <Routes>
-   
-      {/* <Route exact path="/">
-            {
-              user && user._id ? <Landing setLoginUser={setLoginUser} /> : <Login setLoginUser={setLoginUser}/>
-           }
-       </Route> 
-    
-     <Route exact path="/login">
-            <Login setLoginUser={setLoginUser}/>
-     </Route> */}
-
      <Route exact path = "/" element={<Landing/>}/> 
      <Route exact path = '/login' element={<Login/>}/>
      <Route exact path = '/register' element={<Register/>}/>
      <Route  path = '*' element={<Error/>}/>
-     <Route exact path = '/flowchart' element={<MindNode/>}/>
-    
      <Route exact path='/dashboard' element={<Dashboard/>}/>
-     <Route exact path="/draganddrop" element={<MindApp/>}/>
+     <Route exact path = '/flowchart' element={<MindNode/>}/>
+     <Route exact path="/draganddrop" element={<Dnd/>}/>
+     <Route exact path = '/mapping' element={<MappingNode/>}/> 
+     <Route path="/whiteboard" element={<Board />}/>
   
    </Routes> 
   
  
-  
+</>  
   )
 }
 

@@ -16,6 +16,7 @@ import Navbar from '../LandingPage/Navbar';
 import Divider from '@mui/material/Divider';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast from 'react-hot-toast'
 
 
 
@@ -46,18 +47,19 @@ const register = () => {
       axios.post("http://localhost:9002/register", user)
       .then( res => {
           alert(res.data.message)
-          navigate.push("/login")
+          // toast.success('User Registered Successfully')
+          navigate("/login")
       })
     } else if (name == "") {
-      alert("Please Enter Your Name")
+      toast.error("Please Enter Your Name")
     } else if (email == "") {
-      alert("Please Enter Your Email")
+      toast.error("Please Enter Your Email")
     } else if (password == "") {
-      alert("Please Enter Your Password")
+      toast.error("Please Enter Your Password")
     } else if (password != reEnterPassword) {
-      alert("Your password does not match with your re-entered-password")
+      toast.error("Your password does not match with your Re-entered password")
     } else {
-      alert("invalid input")
+      toast.error("invalid input")
     }
   
 }
@@ -75,18 +77,18 @@ return (
 
           <h1 className="my-5 display-3 fw-bold ls-tight px-3">
           Take ideas from <br />
-            <span className="text-[#E46D5F]">better to best </span>
+            <span className="text-[#58549E]">better to best </span>
           </h1>
 
-          <p className='px-3' style={{color: '#E46D5F'}}>
-          Miro is your team's visual platform to connect, collaborate, and create — together.
+          <p className='px-3' style={{color: '#58549E'}}>
+          Weboard is your team's visual platform to connect, collaborate, and create — together.
           </p>
 
         </MDBCol>
 
         <MDBCol md='6'>
           {console.log("User", user)}
-          <MDBCard className='my-4' style={{ backgroundColor: '#ECE5D9'}}>
+          <MDBCard className='my-4' style={{ backgroundColor: '#e2eafc'}}>
             <MDBCardBody className='p-4'>
 
               <MDBRow>
@@ -109,7 +111,7 @@ return (
               </div>
 
             <div className="my-2 grid place-content-center">
-              <Button variant="contained" onClick={register} style={{width:120,height:50, backgroundColor: "#E46D5F"}}>Register</Button>
+              <Button variant="contained" onClick={register} style={{width:120,height:50, backgroundColor: "#58549E"}}>Register</Button>
             </div>
 
 
@@ -119,19 +121,19 @@ return (
 
                 <p> sign up with</p>
 
-                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#E46D5F' }}>
+                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#58549E' }}>
                   <MDBIcon fab icon='facebook-f' size="sm"/>
                 </MDBBtn>
 
-                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#E46D5F' }}>
+                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#58549E' }}>
                   <MDBIcon fab icon='twitter' size="sm"/>
                 </MDBBtn>
 
-                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#E46D5F' }}>
+                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#58549E' }}>
                   <MDBIcon fab icon='google' size="sm"/>
                 </MDBBtn>
 
-                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#E46D5F' }}>
+                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#58549E' }}>
                   <MDBIcon fab icon='github' size="sm"/>
                 </MDBBtn>
 

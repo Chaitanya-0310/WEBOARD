@@ -1,0 +1,65 @@
+#outlined .textfield{
+    margin-left: 10px;
+    margin-top: 10%;
+    border-radius: 5px;
+  }
+
+.mapping_child_div {
+    margin-right:5px ;
+    display: flex;
+    padding: 1px;
+    background:#ECE5D9;
+    height: 8.5vh;
+    width: 23vw;
+    position: absolute;
+    bottom: 2%;
+    left:   1%;
+    border-radius: 5px;  
+    border: 2px #3A3D4E solid;
+   
+  }
+
+  #download-image .avatar_child_div{
+    display:flex;
+    align-items: center;
+    position: absolute;
+    top: 2%;
+    left: 1%;
+    
+  }
+  
+  
+  
+.mapping_exitlogo{
+    margin-right: 2%; 
+    display: flex;
+    position:absolute;
+    top:2%;
+    right:0%;
+    width: 20px;
+    height: 45px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: center;
+    
+  }
+
+
+ #download-image .react-flow__controls{
+    top: 40%;
+    left: 0%;
+    height: 17%;
+    background-color: antiquewhite;
+ }
+
+
+
+ .download-logo{
+    color: black;
+    left: 1px;
+    width: 20px;
+    height: 30px; 
+    margin-left: 7px;
+      
+  }
+  

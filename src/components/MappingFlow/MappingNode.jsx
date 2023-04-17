@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import 'reactflow/dist/style.css';
-import ConnectionLine from './ConnectionLine.jsx';
-import './flowchart.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
@@ -14,44 +12,74 @@ import ReactFlow, {
   useEdgesState,
   addEdge,
   MarkerType,
-
 } from 'reactflow';
 import {BiLogOut} from 'react-icons/bi';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import {Link} from 'react-router-dom'
-import DownloadButton from '../MappingFlow/DownloadButton.jsx';
+import ConnectionLine from '../flowchart/ConnectionLine';
+import CustomEdge from './CustomEdge'
+import DownloadButton from './DownloadButton';
+import './image.css'
+import './mindmapping.css';
+
+
 
 
 
 
 // NODES
 const initialNodes = [
-  { id: '1', 
-    position: { x: 0, y: 0 }, data: { label: 'Start' }, type: 'input', style: {
-    background: "#C7D8C6",
-    color: "#FF5035",
+  { id: '1',
+  sourcePosition: 'right',
+  targetPosition: 'left',
+  type:"custom",
+  
+  data: { label: 'Start' },
+  position: { x: 100, y: 100 },
+  style: {
+    background: "#88C8CB",
+    color: "#333",
     border: "1px solid #000000",
     width: 180
+  
   }},
 ];
 
 // EDGES
-const initialEdges = [{ id: '1', source: ' ', target: ' ', type: 'step' } ];
+const initialEdges = [{ 
+    id: '1', 
+    type: 'default'
+    
+    
+ } ];
+
+
+// const initialEdges = [{ id: '1', source: ' ', target: ' ', type: 'step' } ];
 
 const defaultEdgeOptions = {
-  // animated: true,
-  type: 'smoothstep',
+  animated: true,
+  type: 'bezier',
   style: {stroke: 'rgba(153, 73, 252, 1)'},
+  markerStart:{
+    type: MarkerType.ArrowClosed
+  },
   markerEnd: {
     type: MarkerType.ArrowClosed
   },
 };
 
 
+  const edgeTypes = {
+    custom: CustomEdge,
+  };
+
+
+
+
 // MINIMAP
 const minimapStyle = {
-  height: 130,
+  height: 120,
   };
 
   const onLoad = (reactFlowInstance) =>  {
@@ -65,11 +93,10 @@ const MindNode=()=> {
   
   // FIRST NODE
   const addNode = () => {
-
-
     setNodes(e=>e.concat({
         id:(e.length+1).toString(),
-        type: 'addOne',
+        sourcePosition: 'right',
+        targetPosition: 'left',
         data:{label: `${name}`},
         position: {x: 50, y: 50},
 
@@ -82,24 +109,6 @@ const MindNode=()=> {
     }))
   }
   
-// SECOND NODE
-  const addNodeTwo = () => {
-    setNodes(e=>e.concat({
-        id:(e.length+1).toString(),
-        type:'addTwo',
-        data:{label: `${name}`},
-        position: {x: 50, y: 50},
-           
-        style: {
-          background: "#1D7948",
-          color: "#DDEA90",
-          border: "1px solid #000000",
-          width: 180,
-          
-        }
-    }))
-  }
-
   // AVATAR
   function stringToColor(string) {
     let hash = 0;
@@ -137,73 +146,66 @@ const MindNode=()=> {
 
   return (
     <>
-    <div className='parent_div'>
-    <div id="flowchart" style={{ width: '100%', height: '100vh' }}>
+    <div className='mapping_parent_div'>
+    <div className="wrapper" id="download-image" style={{ width: '100%', height: '100vh' }}>
     <DownloadButton/> 
+     
       <ReactFlow
         defaultNodes={initialNodes}
         defaultEdges={initialEdges}
         nodes={nodes}
         edges={edges}
+        edgeTypes={edgeTypes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
+        connectionLineStyle={ConnectionLine}
         connectionLineComponent={ConnectionLine}
         defaultEdgeOptions={defaultEdgeOptions}
-        snapToGrid = {true}
-        snapGrid={[16,16]}
+        fitView
       >
        
-        <Controls id='flowchart' />
+        <Controls />
         <MiniMap 
                 nodeColor={n=>{
-                    if(n.type === 'input') return 'red';
-                    
-                    else if(n.type == 'addOne') return 'green';
+                    if(n.type === 'custom') return 'red';
 
                     return 'blue'
                       }} style={minimapStyle} zoomable pannable />
-        <Background variant="dots" gap={12} size={1} color="#888"/>
+                      
+        <Background variant="dots" gap={18} size={1 } color="Yellow"/>
       </ReactFlow>
 
-      <div className='avatar_child_div'>
+
+      <div className='avatar_child_div'> 
        <Stack direction="row" spacing={2}>
-          <Avatar {...stringAvatar('Harsh Desai')} style={{ width: 55, height: 55 }}/>  
+          <Avatar {...stringAvatar('Chaitanya Panchal')} style={{ width: 55, height: 55 }}/>  
           {/* for dynamic Nam `${Name} */}
         </Stack>
       </div>
       
-     
-        <div className="child_div"> 
+
+    
+        <div className="mapping_child_div"> 
             <span>
-            <TextField id="outlined-basic" label="Enter Text" variant="outlined" size='small' className='m-2' onChange={e => setName(e.target.value)}
+            <TextField id="outline" label="Enter Text" variant="outlined" size='small' className='m-2' onChange={e => setName(e.target.value)}
                       name="title" />
 
-            <Button className = "m-2" style={{backgroundColor: "#58549E", color: "white"}} variant="contained" type="button" size='medium'
+            <Button className = "m-2" style={{backgroundColor: "#E46D5F", color: "black"}} variant="contained" type="button" size='medium'
                       onClick={addNode} >Add Node</Button>
-            </span>
-
-            <span>
-            <TextField id="outlined-basic" label="Enter Text" variant="outlined" size='small' className='m-2' onChange={e => setName(e.target.value)}
-                      name="title" />
-
-            <Button className = "m-2" style={{backgroundColor: "#58549E", color: "white"}}  variant="contained" type="button" size='medium'
-                      onClick={addNodeTwo} >Add Node</Button>
-            </span>
-
-              
+            </span>    
         </div>
         
 
-        <div className='exitlogo'>
-        <Tooltip title="Go To Dashboard"> 
-        <Link exact to = "/Dashboard"> <IconButton color="primary" href="#contained-buttons" className='button_logout' style={{backgroundColor: "#58549E", color: "black", width:40, height:40, borderRadius:4}}>
-          <BiLogOut style={{width:45, height:30, color: 'white'}} />
-        </IconButton>
-        </Link>
-        </Tooltip>
+        <div className='mapping_exitlogo'>
+          <Tooltip title="Go To Dashboard"> 
+            <Link exact to = "/Dashboard"> 
+            <IconButton color="primary" href="#contained-buttons" className='button_logout' style={{backgroundColor: "#E46D5F", color: "black", width:40, height:43, borderRadius:4}}>
+              <BiLogOut style={{width:45, height:30, color: 'black'}} />
+            </IconButton>
+           </Link>
+          </Tooltip>
         </div>
-          
         
       
       </div>

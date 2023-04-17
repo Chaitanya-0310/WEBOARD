@@ -58,7 +58,7 @@ const TopicSelection = ({ selection }) => (
 
 const ChannelBlock = () => (
   <div className='channel-block'>
-    <h5 className='channel-block-text text-[28px] text-purple-900'>WEBOARD</h5>
+    <h5 className='channel-block-text text-[50px] text-purple-900'>WEBOARD</h5>
     <h8 className="bg-slate-300  mr-10 ml-2 p-2 rounded-2xl ">free</h8>
   </div>
 );

@@ -3,6 +3,7 @@
 @tailwind components; 
 
 
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -10,21 +11,15 @@
   padding: 0;
 }
 
-html {
-  min-height: 100%;
-}
 
-body {
-  min-height: 100vh;
-}
 
 @layer components {
   .sidebar-icon {
     @apply relative flex items-center justify-center 
     h-12 w-12 mt-2 mb-2 mx-auto  
-  bg-[#AEE5D0] hover:bg-gray-400 dark:bg-gray-800 
-  text-[#425C81] hover:text-[#AEE5D0]
-    hover:rounded-md rounded-xl
+  bg-[#bce0f5] dark:bg-gray-800 
+  text-[#58549E] 
+    hover:rounded-lg rounded-lg
     transition-all duration-300 ease-linear
     cursor-pointer shadow-lg ;
   }
@@ -174,19 +169,20 @@ body {
 
   .channel-container {
     @apply flex flex-col items-center justify-start 
-    p-1 m-0 ;
+    p-1 m-0;
   }
 
   .channel-block {
     @apply flex items-center justify-center 
     h-16 
-    m-0 p-0;
+    m-0 p-0
   }
 
   .channel-block-text {
-    @apply text-lg tracking-wider font-bold 
-    text-gray-600 dark:text-gray-400 
-    mr-auto ml-4 my-auto align-middle;
+    @apply text-2xl tracking-wider font-bold 
+    text-[#00073e] dark:text-gray-400 
+    mr-auto ml-8 my-auto align-middle;
+
   }
 
   .dropdown {
@@ -226,7 +222,7 @@ body {
   }
 
   .card{
-    width: 300px;
+    width: 100px;
     height: 200px;
     margin-left: 10px;
     margin-top: 10px;
@@ -270,16 +266,12 @@ body {
 
 
   .template-container{
-   
     @apply
-   bg-gray-50 dark:bg-gray-800 
-   
-    rounded-xl
+   bg-[#A8A4CE] dark:bg-gray-800 
+    rounded-3xl
     p-2 
     mr-2
   }
-
-
 
 
 
