@@ -13,12 +13,10 @@ function TextUpdaterNode({ data, isConnectable }) {
   return (
     <div className="text-updater-node">
       <Handle type="source" position={Position.Left} isConnectable={isConnectable} />
-      <Handle type="target" position={Position.Top} isConnectable={isConnectable} style={handleStyle}/>
-     <div>
+    <div>
          <input id="text" name="text" onChange={onChange} className="nodrag" />
       </div>
-      <Handle type="target" position={Position.Right} id="b" isConnectable={isConnectable}/>
-      <Handle type="source" position={Position.Bottom} id="c" isConnectable={isConnectable} style={handleStyle} />
+        <Handle type="target" position={Position.Right} id="b" isConnectable={isConnectable}/>
     </div>
   );
 }

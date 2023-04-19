@@ -14,8 +14,6 @@ import './dnd.css';
 import './indexstyle.css';
 import { MiniMap, Background } from 'reactflow';
 import './Theme.css';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import TextUpdaterNode from './TextUpdaterNode.js';
 import './text-updater-node.css';
 import TextUpdaterTwo from './TextUpdaterTwo';
@@ -25,6 +23,7 @@ import {BiLogOut} from 'react-icons/bi';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import {Link} from 'react-router-dom'
+import DownloadButton from '../MappingFlow/DownloadButton';
 
 
 
@@ -126,6 +125,7 @@ function stringAvatar(name) {
         id: getId(),
         type,
         position,
+        // HERE IS THE PROBLEM
         data: { label: `${type} node` },
       };
 
@@ -140,7 +140,8 @@ function stringAvatar(name) {
   return (
     <div className="dndflow">
       <ReactFlowProvider>
-        <div className="reactflow-wrapper" ref={reactFlowWrapper} style={{width: '100%', height: '100vh'}}>
+        <div className="reactflow-wrapper" id="dnd" ref={reactFlowWrapper} style={{width: '100%', height: '100vh'}}>
+          <DownloadButton/> 
           <ReactFlow
             nodes={nodes}
             edges={edges}
@@ -184,8 +185,8 @@ function stringAvatar(name) {
         <div className='dragndrop_exitlogo'>
           <Tooltip title="Go To Dashboard"> 
             <Link exact to = "/Dashboard"> 
-            <IconButton color="primary" href="#contained-buttons" className='button_logout' style={{backgroundColor: "#E46D5F", color: "black", width:40, height:43, borderRadius:4}}>
-              <BiLogOut style={{width:45, height:30, color: 'black'}} />
+            <IconButton color="primary" href="#contained-buttons" className='button_logout' style={{backgroundColor: "#58549E", width:40, height:43, borderRadius:4}}>
+              <BiLogOut style={{width:45, height:30, color: 'white'}} />
             </IconButton>
            </Link>
           </Tooltip>

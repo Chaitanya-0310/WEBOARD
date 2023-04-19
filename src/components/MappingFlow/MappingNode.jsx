@@ -173,7 +173,7 @@ const MindNode=()=> {
                     return 'blue'
                       }} style={minimapStyle} zoomable pannable />
                       
-        <Background variant="dots" gap={18} size={1 } color="Yellow"/>
+        <Background variant= "dots" gap={18} size={1} color="#0A4D68"/>
       </ReactFlow>
 
 
@@ -191,7 +191,7 @@ const MindNode=()=> {
             <TextField id="outline" label="Enter Text" variant="outlined" size='small' className='m-2' onChange={e => setName(e.target.value)}
                       name="title" />
 
-            <Button className = "m-2" style={{backgroundColor: "#E46D5F", color: "black"}} variant="contained" type="button" size='medium'
+            <Button className = "m-2" style={{backgroundColor: "#58549E", color: "white"}} variant="contained" type="button" size='medium'
                       onClick={addNode} >Add Node</Button>
             </span>    
         </div>
@@ -200,8 +200,8 @@ const MindNode=()=> {
         <div className='mapping_exitlogo'>
           <Tooltip title="Go To Dashboard"> 
             <Link exact to = "/Dashboard"> 
-            <IconButton color="primary" href="#contained-buttons" className='button_logout' style={{backgroundColor: "#E46D5F", color: "black", width:40, height:43, borderRadius:4}}>
-              <BiLogOut style={{width:45, height:30, color: 'black'}} />
+            <IconButton color="primary" href="#contained-buttons" className='button_logout' style={{backgroundColor: "#58549E", color: "black", width:40, height:43, borderRadius:4}}>
+              <BiLogOut style={{width:45, height:30, color: 'white'}} />
             </IconButton>
            </Link>
           </Tooltip>

@@ -28,7 +28,7 @@ import DownloadButton from '../MappingFlow/DownloadButton.jsx';
 // NODES
 const initialNodes = [
   { id: '1', 
-    position: { x: 0, y: 0 }, data: { label: 'Start' }, type: 'input', style: {
+    position: { x: 200, y: 200 }, data: { label: 'Start' }, type: 'input', style: {
     background: "#C7D8C6",
     color: "#FF5035",
     border: "1px solid #000000",
@@ -71,7 +71,7 @@ const MindNode=()=> {
         id:(e.length+1).toString(),
         type: 'addOne',
         data:{label: `${name}`},
-        position: {x: 50, y: 50},
+        position: {x: 200, y: 100},
 
         style: {
           background: "#F2C4B8",
@@ -88,7 +88,7 @@ const MindNode=()=> {
         id:(e.length+1).toString(),
         type:'addTwo',
         data:{label: `${name}`},
-        position: {x: 50, y: 50},
+        position: {x: 100, y: 100},
            
         style: {
           background: "#1D7948",
@@ -163,12 +163,12 @@ const MindNode=()=> {
 
                     return 'blue'
                       }} style={minimapStyle} zoomable pannable />
-        <Background variant="dots" gap={12} size={1} color="#888"/>
+        <Background variant="dots" gap={18} size={1} color="#0A4D68"/>
       </ReactFlow>
 
       <div className='avatar_child_div'>
        <Stack direction="row" spacing={2}>
-          <Avatar {...stringAvatar('Harsh Desai')} style={{ width: 55, height: 55 }}/>  
+          <Avatar {...stringAvatar('Chaitanya Panchal')} style={{ width: 55, height: 55 }}/>  
           {/* for dynamic Nam `${Name} */}
         </Stack>
       </div>

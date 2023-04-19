@@ -17,6 +17,7 @@ import {
 import ColourPicker from "./ColourPicker";
 import { download } from "./download";
 import { FlexboxGrid } from "rsuite";
+import { Hidden } from "@mui/material";
 
 export default function Swatch({
   toolType,
@@ -65,7 +66,7 @@ export default function Swatch({
           className="col-md-1 icon-bar"
           style={{
             position: "absolute",
-            backgroundColor: "#1c1e29",
+            backgroundColor: "#D0CEE5",
             // height: `${window.innerHeight * 0.09 * 8}px`,
             width: `${window.innerWidth * 0.042 * 1}px`,
             left: "10px",
@@ -199,7 +200,7 @@ export default function Swatch({
             className="row icon-vbar"
             style={{
               position: "absolute",
-              backgroundColor: "#1c1e29",
+              backgroundColor: "#D0CEE5",
               width:80,
               height: 250,
               // right: `${
@@ -210,6 +211,7 @@ export default function Swatch({
               bottom: "220px",
               borderRadius: "10px",
               display:FlexboxGrid,
+              overflow: "Hidden"
             }}
           >
             <button
@@ -241,28 +243,11 @@ export default function Swatch({
                 onClick={handleClickStroke}
               ></button>
             </div>
-            {/* <button
-              style={styles.topicons}
-              onClick={increaseWidth}
-              data-toggle="tooltip"
-              data-placement="top"
-              title="Increase Width"
-            >
-              <Plus />
-            </button>
-            <button
-              style={styles.topicons}
-              onClick={decreaseWidth}
-              data-toggle="tooltip"
-              data-placement="top"
-              title="Decrease Width"
-            >
-              <Minus />
-            </button> */}
+           
           </div>
           <div
             className="row"
-            style={{ position: "absolute", right: "0px", top: "0px" }}
+            style={{ position: "absolute", right: "100px", top: "10px" }}
           >
             {displayStroke && (
               <div className="col-md-3">

@@ -13,12 +13,13 @@ export const styles = reactCSS({
     },
     topicons: {
       border: "none",
-      width: `${window.innerWidth * 0.073}px`,
+      width: `${window.innerWidth * 0.063}px`,
       height: `${window.innerHeight * 0.09}px`,
       background: "none",
       borderRadius: "0.1%",
       outline: "none",
-      padding: "0.5%",
+      padding: "10%",
+      marginLeft: "20%"
     },
     picker: {
       border: "none",
@@ -29,7 +30,7 @@ export const styles = reactCSS({
       borderRadius: "7%",
       outline: "none",
       filter: "blur(0.5px)",
-      padding: "0.5%",
+      padding: "10%",
       marginTop:
         window.innerWidth <= 1024 //320
           ? `${window.innerHeight - window.innerHeight * 0.981}px`

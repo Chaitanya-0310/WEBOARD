@@ -8,14 +8,13 @@
     margin-right:5px ;
     display: flex;
     padding: 1px;
-    background:#ECE5D9;
+    background:#D0CEE5;
     height: 8.5vh;
     width: 23vw;
     position: absolute;
     bottom: 2%;
     left:   1%;
     border-radius: 5px;  
-    border: 2px #3A3D4E solid;
    
   }
 
@@ -49,7 +48,7 @@
     top: 40%;
     left: 0%;
     height: 17%;
-    background-color: antiquewhite;
+    background-color: #ECE5D9;
  }
 
 

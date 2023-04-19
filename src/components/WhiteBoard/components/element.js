@@ -3,7 +3,7 @@ const generator = rough.generator();
 
 export function createElement(id, x1, y1, x2, y2, type, width, strokeColor) {
   let roughElement = null;
-  //console.log("calling create element....");
+  //console.log("calling create element...."); 
   switch (type) {
     case "line":
       roughElement = generator.line(x1, y1, x2, y2, {
