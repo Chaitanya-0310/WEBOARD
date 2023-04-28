@@ -22,7 +22,7 @@
   }
   
   
-  .dndflow .dndnode {
+  .dndflow .dndnode.dnddrag {
     height: 50px;
     padding: 4px;
    
@@ -35,19 +35,43 @@
     margin: 5px;
     width: 100px;
     border-radius: 4px;
-    color: black;
+ 
     background-color: #58549E;
     color: white;
    
   }
   
   .dndflow .dndnode.input {
+    height: 50px;
+    padding: 4px;
+   
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    margin: 5px;
+    width: 100px;
+    border-radius: 4px;
     
     background-color: #58549E;
     color: white;
   }
   
-  .dndflow .dndnode.output {    
+  .dndflow .dndnode.output {   
+    height: 50px;
+    padding: 4px;
+   
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    margin: 5px;
+    width: 100px;
+    border-radius: 4px; 
     background-color: #58549E;
     color: white;
   }
@@ -142,7 +166,6 @@
 }
 
 
-  
   
   @media screen and (min-width: 768px) {
     .dndflow {

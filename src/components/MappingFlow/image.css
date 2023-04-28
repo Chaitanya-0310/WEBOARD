@@ -1,5 +1,5 @@
 #download-image .react-flow {
-    background: #FDF4F5;
+    background: #F6F6F7;
   }
   
   #download-image.wrapper {
@@ -29,3 +29,6 @@
   .react-flow__edges.selected{
     stroke: #ebf8ff;
   }
+
+
+  

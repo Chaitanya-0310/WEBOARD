@@ -1,0 +1,9 @@
+
+.whiteboard_avatar_child_div{
+    display:flex;
+    align-items: center;
+    position: absolute;
+    top: 2%;
+    left: 1%;
+    
+  }

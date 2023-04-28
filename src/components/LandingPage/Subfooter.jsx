@@ -7,11 +7,10 @@ const Subfooter = () => {
       
     <div className="subfooter">
         <div className="container flex subfooter-container">
-            <a className="hover-link" href="#">Privacy policy</a>
-            <a className="hover-link" href="#">Terms & Condition</a>
-            <a className="hover-link" href="#">Security Information</a>
-            <a className="hover-link" href="#"><i className="fa-brands fa-facebook"></i></a>
-            <a className="hover-link" href="#"><i className="fa-brands fa-twitter"></i></a>
+           <div className='subfooter-main'> 
+            <h3 className ="hellofont">WEBOARD</h3>
+            <p>Copyright © 2023  WEBOARD </p>
+          </div>
         </div>
     </div>
 

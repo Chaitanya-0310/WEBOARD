@@ -38,7 +38,7 @@
   }
 
   .top-navigation {
-    @apply flex flex-row items-center justify-evenly 
+    @apply flex flex-row  items-center justify-center
     bg-gray-300 dark:bg-gray-700 bg-opacity-90 
     w-full h-16
     m-0 
@@ -46,15 +46,15 @@
   }
 
   .top-navigation-icon {
-    @apply text-gray-500
-    mr-[15px] ml-1
+    @apply text-[#58549E]
+    mr-2 ml-auto 
     transition duration-300 ease-in-out 
-    hover:text-pink-400 
+    hover:text-blue-400 
     cursor-pointer;
   }
 
   .top-navigation-icon:first {
-    @apply ml-auto mr-4;
+    @apply ml-auto mr-4 w-10; 
   }
 
   .title-hashtag {
@@ -63,15 +63,15 @@
   }
 
   .title-text {
-    @apply text-[32px] font-bold text-[#425C81] tracking-wider text-opacity-80 
-    mr-auto ml-6 my-auto 
+    @apply text-[32px] font-bold text-[rgb(66,92,129)] tracking-wider text-opacity-80 
+    mr-[38rem] ml-[0.5rem] my-auto  flex flex-row
     transition duration-300 ease-in-out;
   }
 
   .search {
     @apply w-2/6 flex items-center justify-start 
     bg-gray-400 dark:bg-gray-600
-    text-gray-500
+    text-white
     px-2 h-9 ml-0 mr-0 
     rounded-md shadow-md
     transition duration-300 ease-in-out;
@@ -240,7 +240,7 @@
 
   .card-layout{
     justify-content: space-evenly;
-    hover: border 
+    hover: border ;
     
   }
 
@@ -252,7 +252,7 @@
   }
 
   .cardimage:hover{
-      border: 2px solid #3410d4;    
+      border: 3px solid #9384D1;    
   }
 
 
@@ -267,7 +267,7 @@
 
   .template-container{
     @apply
-   bg-[#A8A4CE] dark:bg-gray-800 
+   bg-[#9ab7c8] dark:bg-gray-800 
     rounded-3xl
     p-2 
     mr-2

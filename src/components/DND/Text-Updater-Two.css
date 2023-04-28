@@ -3,12 +3,11 @@
     border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
-    background: rgb(228, 53, 53);
+    background: #31E1F7;
   }
-  
-  .text-updater-node label {
+  .text-updater-node-two label {
     display: block;
     color: black;
-    font-size: 8px;
-  }
+    font-size: 15px;
   
+  }

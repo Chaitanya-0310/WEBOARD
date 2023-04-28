@@ -1,6 +1,5 @@
 import React from 'react';
-// import './featurestyle.css';
-// import './src/mainstyle.css'
+import { Button } from '@mui/material';
 
 
 const Features = () => {
@@ -11,7 +10,8 @@ const Features = () => {
 <div className="container">
     <div classNam="features-header">
         <h2 className="features-heading-text">Explore Various available templates</h2>
-        <a href="#" className="secondary-button">See all templates <i className="fa-solid fa-right-long"></i></a>
+        
+        <button variant="outlined" className="secondary-button">See all templates <i className="fa-solid fa-right-long"></i></button>
     </div>
     <div className="features-area flex">
         <div className="features-card flex">

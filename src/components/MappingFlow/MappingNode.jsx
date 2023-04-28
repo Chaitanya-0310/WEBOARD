@@ -22,6 +22,7 @@ import CustomEdge from './CustomEdge'
 import DownloadButton from './DownloadButton';
 import './image.css'
 import './mindmapping.css';
+import {name} from '../login_signup/Register'
 
 
 
@@ -36,15 +37,25 @@ const initialNodes = [
   type:"custom",
   
   data: { label: 'Start' },
-  position: { x: 100, y: 100 },
+  position: {
+    x: Math.random() * 500,
+    y: Math.random() * 500
+  },
   style: {
-    background: "#88C8CB",
-    color: "#333",
-    border: "1px solid #000000",
+    background: "#F55353",
+    color: "black",
+    border: "2px solid pink",
     width: 180
   
   }},
 ];
+
+
+
+
+
+
+
 
 // EDGES
 const initialEdges = [{ 
@@ -55,19 +66,28 @@ const initialEdges = [{
  } ];
 
 
-// const initialEdges = [{ id: '1', source: ' ', target: ' ', type: 'step' } ];
 
 const defaultEdgeOptions = {
   animated: true,
   type: 'bezier',
-  style: {stroke: 'rgba(153, 73, 252, 1)'},
+  style: {stroke: '#43919B'},
+  strokeWidth: '5',
+  width:'5',
+
+
   markerStart:{
-    type: MarkerType.ArrowClosed
+    type: MarkerType.ArrowClosed,
+    color:'#247881',
+    width:'20'
+   
+   
   },
   markerEnd: {
-    type: MarkerType.ArrowClosed
+    type: MarkerType.ArrowClosed,
+    color:'#247881'
   },
 };
+
 
 
   const edgeTypes = {
@@ -86,6 +106,10 @@ const minimapStyle = {
     reactFlowInstance.fitView();
 }
 
+
+
+
+
 const MindNode=()=> {
   const [nodes, setNodes, onNodesChange] = useState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
@@ -98,12 +122,15 @@ const MindNode=()=> {
         sourcePosition: 'right',
         targetPosition: 'left',
         data:{label: `${name}`},
-        position: {x: 50, y: 50},
+        position:{
+          x: Math.random() * 500,
+          y: Math.random() * 500
+        },
 
         style: {
-          background: "#F2C4B8",
-          color: "#1B227D",
-          border: "1px solid #000000",
+          background: "#B983FF ",
+          color: "black",
+          border: "2px solid #D09CFA",
           width: 180
         }
     }))
@@ -168,19 +195,19 @@ const MindNode=()=> {
         <Controls />
         <MiniMap 
                 nodeColor={n=>{
-                    if(n.type === 'custom') return 'red';
+                    if(n.type === 'custom') return '#F55353 ';
 
-                    return 'blue'
+                    return '#B983FF '
                       }} style={minimapStyle} zoomable pannable />
                       
-        <Background variant= "dots" gap={18} size={1} color="#0A4D68"/>
+        <Background variant= "dots" gap={30} size={1} color="black"/>
       </ReactFlow>
 
 
       <div className='avatar_child_div'> 
        <Stack direction="row" spacing={2}>
           <Avatar {...stringAvatar('Chaitanya Panchal')} style={{ width: 55, height: 55 }}/>  
-          {/* for dynamic Nam `${Name} */}
+          {/* for dynamic Name `${Name} */}
         </Stack>
       </div>
       
@@ -191,7 +218,7 @@ const MindNode=()=> {
             <TextField id="outline" label="Enter Text" variant="outlined" size='small' className='m-2' onChange={e => setName(e.target.value)}
                       name="title" />
 
-            <Button className = "m-2" style={{backgroundColor: "#58549E", color: "white"}} variant="contained" type="button" size='medium'
+            <Button className = "m-2" style={{backgroundColor: "#58549E ", color: "white"}} variant="contained" type="button" size='medium'
                       onClick={addNode} >Add Node</Button>
             </span>    
         </div>

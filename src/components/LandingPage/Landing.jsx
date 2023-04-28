@@ -20,7 +20,7 @@ const Landing = () => {
           <Features/>
           <Featuresadd/>
           <Cta/>
-          <Footer/>
+          {/* <Footer/> */}
           <Subfooter/>        
       
     </>

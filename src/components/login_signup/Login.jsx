@@ -9,7 +9,6 @@ import Divider from '@mui/material/Divider';
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 import {Link} from "react-router-dom";
-import { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast';
 
 
@@ -62,9 +61,9 @@ const login = () => {
         </div>
 
         <div className="login">
-            <h1>Login</h1>
+            <h1 className="text-decoration: uppercase">Login</h1>
             <div className="input-form">
-              <TextField id="email" name="email" type="text" value={user.email} onChange={handleChange} label="Enter your Email" variant="outlined" style={{width: 350, height: 30}}  />
+              <TextField id="email" name="email" type="text" value={user.email} onChange={handleChange} label="Enter your Email" variant="outlined" style={{width: 350, height: 30, Color:'#58549E'}}  />
             </div>
             <div className="input-form">
               <TextField id="password" name="password" type="password" value={user.password} onChange={handleChange} label="Enter your Password" variant="outlined" style={{width: 350, height: 55}} className="input-form" />

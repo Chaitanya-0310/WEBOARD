@@ -15,11 +15,11 @@ export default () => {
 
   return (
     <aside>
-      <Button className="dndnode input" onDragStart={(event)=> onDragStart(event, 'textUpdater')} variant="contained" draggable >Input</Button>
+      <Button className="dndnode output" onDragStart={(event) => onDragStart(event, 'input')} variant='contained' draggable>Input</Button>
       
-      <Button className="dndnode" onDragStart={(event) => onDragStart(event, 'textUpdateTwo')} variant='contained' draggable>Default</Button>
+      <Button className="dndnode input" onDragStart={(event)=> onDragStart(event, 'textUpdater')} variant="contained" draggable>Default</Button>
     
-      <Button className="dndnode output" onDragStart={(event) => onDragStart(event, 'output')} variant='contained' draggable>Output</Button>
+      <Button className="dndnode dnddrag" onDragStart={(event) => onDragStart(event, 'textUpdateTwo')} variant='contained' draggable> Output</Button>
 
     </aside>
   );

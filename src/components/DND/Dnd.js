@@ -24,6 +24,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import {Link} from 'react-router-dom'
 import DownloadButton from '../MappingFlow/DownloadButton';
+import { useMemo } from 'react';
 
 
 
@@ -31,7 +32,6 @@ const initialNodes = [
   {
     id: '1',
     type: 'textUpdater',
-    data: { label: 'input node' },
     position: { x: 250, y: 5 },
   },
 ];
@@ -66,7 +66,6 @@ const DnDFlow = () => {
     [setEdges]
   );
   
-  // const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), []);
 
  // AVATAR
  function stringToColor(string) {
@@ -126,7 +125,12 @@ function stringAvatar(name) {
         type,
         position,
         // HERE IS THE PROBLEM
-        data: { label: `${type} node` },
+        data: { label: `${type}` },
+        style: {backgroundColor:
+          '#00FFAB',
+          width: 200,
+          
+        }
       };
 
       setNodes((nds) => nds.concat(newNode));
@@ -134,8 +138,8 @@ function stringAvatar(name) {
     [reactFlowInstance]
   );
 
-  
-  const nodeTypes = { textUpdater: TextUpdaterNode, textUpdateTwo: TextUpdaterTwo};
+
+  const nodeTypes = useMemo(()=>({ textUpdater: TextUpdaterNode, textUpdateTwo: TextUpdaterTwo}), []);
 
   return (
     <div className="dndflow">
@@ -156,12 +160,18 @@ function stringAvatar(name) {
           >
           <MiniMap 
                 nodeColor={n=>{
-                    if(n.type === 'input') return 'red';
+                    if(n.type === 'input') return '#00FFAB'
                     
-                    return 'blue'
+                    else if(n.type === 'textUpdater')
+
+                    return '#FF7777'
+                    
+                    else
+                    
+                    return '#31E1F7'
                       }} style={minimapStyle} zoomable pannable />
 
-         <Background variant="dots" gap={12} size={1} color="#888"/>
+         <Background variant="dots" gap={30} size={1} color="black  "/>
           
         <Controls />
         

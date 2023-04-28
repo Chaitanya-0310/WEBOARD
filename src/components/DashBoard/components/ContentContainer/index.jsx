@@ -48,10 +48,10 @@ const ContentContainer = ({updateUser}) => {
       </header>
  
         <div className= 'card-container'>  
-         <Link exact to = "/flowchart" ><CardPlate name="Flowchart" image={require("./assets/Flowchart.png")}/> </Link>
+          <Link exact to = "/flowchart" ><CardPlate name="Flowchart" image={require("./assets/Flowchart.png")}/> </Link>
           <Link exact to = "/mapping"><CardPlate name="MindMap" image={require("./assets/mind_map.png")}/></Link>
-          <Link to ="/whiteboard" ><CardPlate name="WhiteBoard" image={require("./assets/Quick_Retrospective.png")}/></Link> 
           <Link exact to = "/draganddrop"><CardPlate name="DragNdrop " image={require("./assets/KanbanFramework.png")}/></Link>
+          <Link to ="/whiteboard" ><CardPlate name="WhiteBoard" image={require("./assets/Quick_Retrospective.png")}/></Link> 
           <CardPlate name="Customer Timeline" image={require("./assets/CustomerJourneyMapTimeline.png")}/> 
         </div>
      </Container>    

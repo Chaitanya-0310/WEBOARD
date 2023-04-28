@@ -14,6 +14,8 @@ import ReactFlow, {
   useEdgesState,
   addEdge,
   MarkerType,
+  useReactFlow,
+  ReactFlowProvider
 
 } from 'reactflow';
 import {BiLogOut} from 'react-icons/bi';
@@ -28,9 +30,14 @@ import DownloadButton from '../MappingFlow/DownloadButton.jsx';
 // NODES
 const initialNodes = [
   { id: '1', 
-    position: { x: 200, y: 200 }, data: { label: 'Start' }, type: 'input', style: {
-    background: "#C7D8C6",
-    color: "#FF5035",
+    position: {
+      x: Math.random() * 500,
+      y: Math.random() * 500
+    }, 
+    
+    data: { label: 'Start' }, type: 'input', style: {
+    background: "#2B3467",
+    color: "#F1E7B6",
     border: "1px solid #000000",
     width: 180
   }},
@@ -42,9 +49,10 @@ const initialEdges = [{ id: '1', source: ' ', target: ' ', type: 'step' } ];
 const defaultEdgeOptions = {
   // animated: true,
   type: 'smoothstep',
-  style: {stroke: 'rgba(153, 73, 252, 1)'},
+  style: {stroke: '#FF8D29'},
   markerEnd: {
-    type: MarkerType.ArrowClosed
+    type: MarkerType.ArrowClosed,
+    color: '#FF8D29'
   },
 };
 
@@ -71,11 +79,14 @@ const MindNode=()=> {
         id:(e.length+1).toString(),
         type: 'addOne',
         data:{label: `${name}`},
-        position: {x: 200, y: 100},
+        position: {
+        x: Math.random() * 500,
+        y: Math.random() * 500
+      },
 
         style: {
-          background: "#F2C4B8",
-          color: "#1B227D",
+          background: "#10A19D",
+          color: "#F1E7B6",
           border: "1px solid #000000",
           width: 180
         }
@@ -88,17 +99,29 @@ const MindNode=()=> {
         id:(e.length+1).toString(),
         type:'addTwo',
         data:{label: `${name}`},
-        position: {x: 100, y: 100},
+        position: {
+          x: Math.random() * 500,
+          y: Math.random() * 500
+        },
            
         style: {
-          background: "#1D7948",
-          color: "#DDEA90",
+          background: "#EB455F",
+          color: "#F1E7B6",
           border: "1px solid #000000",
           width: 180,
           
         }
     }))
   }
+
+
+
+
+
+
+
+
+
 
   // AVATAR
   function stringToColor(string) {
@@ -157,13 +180,13 @@ const MindNode=()=> {
         <Controls id='flowchart' />
         <MiniMap 
                 nodeColor={n=>{
-                    if(n.type === 'input') return 'red';
+                    if(n.type === 'input') return 'blue';
                     
                     else if(n.type == 'addOne') return 'green';
 
-                    return 'blue'
+                    return 'red'
                       }} style={minimapStyle} zoomable pannable />
-        <Background variant="dots" gap={18} size={1} color="#0A4D68"/>
+        <Background variant="dots" gap={30  } size={1} color="black"/>
       </ReactFlow>
 
       <div className='avatar_child_div'>

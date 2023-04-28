@@ -10,6 +10,9 @@ import {
   midPointBtw,
   getElementAtPosition,
 } from "./components/element";
+import Avatar from '../Avatar/Avatar'
+import ExitLogo from "../Buttons/ExitLogo";
+import DownloadButton from "../MappingFlow/DownloadButton";
 
 function Board() {
   const [points, setPoints] = useState([]);
@@ -325,6 +328,7 @@ function Board() {
       <canvas
         id="canvas"
         className="App"
+        style={{backgroundColor : '#ECF9FF'}}
         width={window.innerWidth}
         height={window.innerHeight}
         onMouseDown={handleMouseDown}
@@ -342,6 +346,8 @@ function Board() {
       >
         Canvas
       </canvas>
+      <Avatar/>
+      <ExitLogo/>
     </div>
   );
 }

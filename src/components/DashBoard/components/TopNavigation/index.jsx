@@ -10,6 +10,9 @@ import {
 import {BiBell} from 'react-icons/bi';
 import {AiOutlineQuestionCircle} from 'react-icons/ai';
 import useDarkMode from '../../hooks/useDarkMode';
+import Tooltip from '@mui/material/Tooltip';
+import Info from './Info'
+import Avatar from '../../../Avatar/Avatar'
 
 
 const TopNavigation = () => {
@@ -17,13 +20,15 @@ const TopNavigation = () => {
     <div className='top-navigation'>
       
       
-      <Search />
-       <Title />
-      <ThemeIcon />
-      <Question/>
-      <BellIcon />
+      {/* <Search /> */}
+      
+      <Title /> 
+      <ThemeIcon /> 
+      <Info  />
+      <BellIcon/>
       <UserCircle />
-     
+      {/* <Avatar className="top-navigation-icon"/> */}
+
     </div>
   );
 };
@@ -51,10 +56,15 @@ const Search = () => (
 const BellIcon = () => <BiBell size='24' className='top-navigation-icon' />;
 const UserCircle = () => <FaUserCircle size='36' className='top-navigation-icon' />;
 const Question = () => <AiOutlineQuestionCircle size='24' className='top-navigation-icon' />;
-const Title = () => <h5 className='title-text '></h5>;
+const Title = () =>(
 
-
-
+<>
+<h1 className='title-text '>
+   
+    <h1>Welcome,</h1> <p className='my-auto ml-2 text-[28px] items-center justify-center'>Chaitanya Panchal</p>
+</h1>
+</>
+)
 
 
 
